@@ -1,0 +1,31 @@
+<% include ../partials/header%>
+
+
+<div class="container"> <!--this cantainer helps to have spacing around the sides--> 
+    <header class="jumbotron">
+        <div class="container"><!--included to have some padding around the text upon resizing window--> 
+            <h1>Welcome to YelpCamp!!</h1>
+            <p>Get a look at hand-picked campgrounds from around the world</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/campgrounds/new">Add new campgrounds</a><br>
+            </p> 
+        </div>
+    </header>
+
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+        <% campGrounds.forEach(function(camp){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src = "<%= camp.image%>" > <!--in the images src , we still need to include the quotes becuase the ejs object doesnt come with it, even though we have included them in the object-->
+                    <div class="caption">
+                        <h4><%= camp.name%></h4>
+                    </div>
+                    <p>
+                        <a href="/campgrounds/<%= camp._id %>" class="btn btn-primary">Show more</a>
+                    </p>
+                </div>
+            </div>
+         <% }); %>
+    </div>
+</div>
+ <% include ../partials/footer%>
