@@ -24,7 +24,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 //Mongo connect
-mongoose.connect('mongodb://localhost:27017/yelp_camp_v7', { useNewUrlParser: true });
+mongoose.connect('mongodb://kaery1000:rama1729@ds115022.mlab.com:15022/yelpcamp', { useNewUrlParser: true });
 
 // seed the DB
 //seedDB();
