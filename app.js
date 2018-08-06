@@ -26,7 +26,9 @@ app.use(flash());
 //Mongo connect
 // mongoose.connect('mongodb://localhost:27017/yelpcampFinal')
 // mongoose.connect('mongodb://kaery1000:rama1729@ds115022.mlab.com:15022/yelpcamp', { useNewUrlParser: true });
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser : true});
+// If DB not accessible via env vars, then assign a default stage DB 
+var dbUrl = process.env.DATABASEURL || "mongodb://localhost:27017/yelpcampFinal";
+mongoose.connect(dbUrl, {useNewUrlParser : true});
 // seed the DB
 //seedDB();
 
